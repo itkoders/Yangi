@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tilakino-yangi
+    runtime: python
+    plan: free
+    region: singapore
+    branch: render-deploy
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 60
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        value: "6359925487"
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: ENABLE_SCHEDULER
+        value: "1"
