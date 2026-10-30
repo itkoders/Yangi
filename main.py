@@ -11,7 +11,7 @@ Admin: /admin  (faqat ADMIN_ID dagi raqamli Telegram ID).
 import os
 import sys
 import types
-TOKEN = 'BOT_TOKEN_SHU_YERGA'
+TOKEN = '8860987149:AAEB35s-IBVw3ZnyGJkfAoK90DnOfS65e_M'
 ADMIN_ID = 6359925487
 BOT_USERNAME = ''
 ANIMATIONS = False
