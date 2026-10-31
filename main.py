@@ -1,3 +1,4 @@
+# Render startup compatibility check
 """
 TILAKINO CINEMA - Telegram kino boti (BITTA FAYL, Pydroid 3 uchun)
 
