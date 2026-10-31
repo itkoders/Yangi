@@ -34,7 +34,8 @@ _setenv('HELP_ADMIN_USERNAMES', HELP_ADMIN_USERNAMES)
 _setenv('RENDER_EXTERNAL_URL', PUBLIC_SITE_URL)
 _setenv('ANIMATIONS', '0')
 _setenv('ANIM_DELAY', '0')
-if not os.environ.get('DATABASE_URL') and not os.environ.get('RENDER'):\n    os.environ['DATABASE_URL'] = 'sqlite:///' + os.path.join(_HERE, DB_FILE)
+if not os.environ.get('DATABASE_URL') and not os.environ.get('RENDER'):
+    os.environ['DATABASE_URL'] = 'sqlite:///' + os.path.join(_HERE, DB_FILE)
 # Render webhook boot: TILAKINO_NO_BOOT ataylab o'rnatilmaydi
 _setenv('ENABLE_SCHEDULER', '1')
 _SOURCES = {}
