@@ -111,8 +111,8 @@ def _work(u):
         logging.getLogger('tilakino').exception('update xatosi')
 
 def dispatch(u):
-    """Update'ni parallel ishlovga beradi. Bir foydalanuvchining update'lari tartib bilan (bitta thread'da),
-    turli foydalanuvchilar esa bir vaqtda ishlanadi - bitta sekin so'rov hammani to'xtatmaydi."""
+    # Update'lar parallel ishlanadi; bir foydalanuvchining update'lari bitta thread'da tartib bilan bajariladi.
+    # Turli foydalanuvchilar bir vaqtda ishlaydi, bitta sekin so'rov boshqalarni to'xtatmaydi.
     if not _execs:
         _execs.extend((ThreadPoolExecutor(max_workers=1, thread_name_prefix='tk%d' % i) for i in range(N_WORKERS)))
     _execs[_uid_of(u) % N_WORKERS].submit(_work, u)
